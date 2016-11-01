@@ -13,14 +13,14 @@ function setup() {
  for (var i = 0; i < 100; i++) {
    var x = random(width);
    var y = random(height);
-   blue[i] = new Cellshuffle(cell, x, y);
+   blue[i] = new Cellshuffle(cell, x, y, random(-.02, .08));
  }
 
 }
 
 function draw() {
-  background(255);
-  background(220, 0, 0, 100);
+ // background(255);
+  //background(220, 0, 0, 100);
 
   for (var i = 0; i < blue.length; i++) {
     blue[i].move();
@@ -28,15 +28,16 @@ function draw() {
   }
 }
 
-function Cellshuffle(img, tempX, tempY) {
+function Cellshuffle(img, tempX, tempY, r) {
 
   this.x = tempX;
   this.y = tempY;
+  this.ra = r;
   this.cellImage = img;
 
   this.move = function() {
     this.x += sin(HALF_PI) * 5;
-    this.y += random(-.0200, .0800);
+    this.y += this.ra;
   }
 
   this.display = function() {
