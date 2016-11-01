@@ -36,7 +36,7 @@ function Cellshuffle(img, tempX, tempY) {
 
   this.move = function() {
     this.x += sin(HALF_PI) * 5;
-    this.y += random(-200, 800);
+    this.y += random(-.0200, .0800);
   }
 
   this.display = function() {
